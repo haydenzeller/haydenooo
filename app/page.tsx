@@ -1,17 +1,30 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <section className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <Image
-          src="/hayden.jpg"
-          alt="ProfilePicture"
-          width={200}
-          height={200}
-          className="mb-8 rounded-full"
-        />
-        <h1>Hayden.</h1>
+    <div className="items-center justify-center min-h-screen w-screen py-10">
+      <section className="max-w-3xl mx-auto px-5">
+        <h1 className="text-5xl font-bold">Hayden.</h1>
+        <p className="text-xl mt-2 font-bold">
+          Computer science student from{" "}
+          <span className=" text-red-500">Canada</span>.
+        </p>
+        <div className="flex flex-row mt-1 gap-5">
+          <Link
+            href="https://x.com/haydendevs"
+            className="link hover:text-red-500 text-xl font-bold"
+          >
+            X
+          </Link>
+          <Link
+            href="https://github.com/haydenzeller"
+            className="link hover:text-red-500 text-xl font-bold"
+          >
+            Github
+          </Link>
+        </div>
+      </section>
+      <section className="max-w-3xl mx-auto px-5 mt-5">
       </section>
     </div>
   );
