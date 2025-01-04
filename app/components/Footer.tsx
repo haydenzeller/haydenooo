@@ -24,8 +24,8 @@ export default function Footer() {
   }, []);
 
   return (
-    <div className="absolute bottom-0 w-full p-5">
-      <div className="flex flex-row justify-center items-center gap-5">
+    <div className="absolute bottom-0 w-full p-2 text-sm">
+      <div className="flex flex-row justify-center items-center gap-2">
         <div className="flex flex-row gap-2 justify-center items-center">
           <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
           <div className="font-bold">{count} Visits</div>
