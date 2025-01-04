@@ -35,6 +35,7 @@ export default function Footer() {
             Hello stranger from <span className="text-red-500">{location}</span>
             .
           </p>
+          
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 // import Link from "next/link";
+import ApiTest from "./components/ApiTest";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
           </Link>
         </div> */}
       </section>
-      <section className="max-w-3xl mx-auto px-5 mt-5"></section>
+      <section className="flex items-center justify-center flex-col max-w-3xl mx-auto px-5 mt-5">
+      </section>
       <Footer />
     </div>
   );
