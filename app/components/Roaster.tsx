@@ -7,11 +7,13 @@ export default function Roaster() {
   const [loading, setLoading] = useState<boolean>(false); // Loading indicator
   const [error, setError] = useState<string | null>(null); // Store errors
 
+
   // Fetch user data and process the response
   const getResponse = async () => {
     setResponse("");
     setError(null);
     setLoading(true);
+    setUsername(username.toLowerCase());
 
     try {
       // Fetch user data
@@ -22,7 +24,7 @@ export default function Roaster() {
       });
 
       if (!userRes.ok) {
-        throw new Error(`Failed to fetch user data: ${userRes.statusText}`);
+        throw new Error(`Failed to fetch user data ${userRes.statusText}`);
       }
 
       const data = await userRes.json();
@@ -40,7 +42,7 @@ export default function Roaster() {
         Tweets: ${
           data.posts?.data?.tweets?.length
             ? JSON.stringify(data.posts.data.tweets)
-            : "No tweets available"
+            : "No posts available"
         }
       `;
 
@@ -54,7 +56,7 @@ export default function Roaster() {
       });
 
       if (!responseRes.ok) {
-        throw new Error("Failed to fetch response from GrokResp API.");
+        throw new Error("Failed to fetch response from Grok.");
       }
 
       const responseData = await responseRes.json();
