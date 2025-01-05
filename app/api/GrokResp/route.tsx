@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest){
+export async function POST(req: NextRequest) {
   const body = await req.json();
   if (!body.prompt) {
-    return NextResponse.json({error: "prompt is required"}, {status: 400});
+    return NextResponse.json({ error: "prompt is required" }, { status: 400 });
   }
   const prompt = body.prompt;
   const ENDPOINT = process.env.XAI_ENDPOINT;
@@ -32,5 +32,6 @@ export async function POST(req: NextRequest){
   });
   const data = await response.json();
   console.log(data);
-  return NextResponse.json(data.choices.map((choice: { message: { content: string } }) => choice.message.content));
+  const responseJSON = data.choices[0].message.content;
+  return NextResponse.json(JSON.parse(responseJSON));
 }
