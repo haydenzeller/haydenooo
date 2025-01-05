@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import Roaster from "../components/Roaster";
 
 export default function XRoast() {
