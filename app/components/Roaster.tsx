@@ -7,7 +7,6 @@ export default function Roaster() {
   const [loading, setLoading] = useState<boolean>(false); // Loading indicator
   const [error, setError] = useState<string | null>(null); // Store errors
 
-
   // Fetch user data and process the response
   const getResponse = async () => {
     setResponse("");
@@ -45,8 +44,6 @@ export default function Roaster() {
             : "No posts available"
         }
       `;
-
-      console.log("Prompt:", userPrompt);
 
       // Fetch roast response
       const responseRes = await fetch("/api/GrokResp", {
