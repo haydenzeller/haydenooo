@@ -8,7 +8,7 @@ export default function Roaster() {
   const [error, setError] = useState<string | null>(null); // Store errors
   const [age, setAge] = useState<number | null>(0); // Store the estimated age
   const [aura, setAura] = useState<number | null>(0); // Store the
- const [brainRot, setBrainRot] = useState<number | null>(0); // Store the brain rot level
+  const [brainRot, setBrainRot] = useState<number | null>(0); // Store the brain rot level
 
   // Fetch user data and process the response
   const getResponse = async () => {
@@ -59,7 +59,10 @@ export default function Roaster() {
       const responseRes = await fetch("/api/GrokResp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: userPrompt }),
+        body: JSON.stringify({
+          prompt: userPrompt,
+          roast: true,
+        }),
       });
 
       if (!responseRes.ok) {
@@ -76,7 +79,6 @@ export default function Roaster() {
       setAge(estimatedAge);
       setAura(auraLevel);
       setBrainRot(brainRotLevel);
-      
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : "An unexpected error occurred.";
@@ -99,7 +101,9 @@ export default function Roaster() {
       <button
         onClick={getResponse}
         disabled={loading}
-        className={`btn text-white mt-5 bg-red-500 ${loading ? "btn-disabled" : ""}`}
+        className={`btn text-white mt-5 bg-red-500 ${
+          loading ? "btn-disabled" : ""
+        }`}
       >
         Roast Me!
       </button>

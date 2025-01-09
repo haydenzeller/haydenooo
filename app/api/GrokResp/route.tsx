@@ -6,6 +6,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "prompt is required" }, { status: 400 });
   }
   const prompt = body.prompt;
+  const roast = body.roast;
   const ENDPOINT = process.env.XAI_ENDPOINT;
   const KEY = process.env.XAI_KEY;
   if (!ENDPOINT) {
@@ -33,5 +34,9 @@ export async function POST(req: NextRequest) {
   const data = await response.json();
   console.log(data);
   const responseJSON = data.choices[0].message.content;
-  return NextResponse.json(JSON.parse(responseJSON));
+  if (roast) {
+    return NextResponse.json({ Roast: responseJSON });
+  } else {
+    return NextResponse.json({ Response: responseJSON });
+  } 
 }
