@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
   console.log(data);
   const responseJSON = data.choices[0].message.content;
   if (roast) {
-    return NextResponse.json({ Roast: responseJSON });
+    return NextResponse.json(JSON.parse(responseJSON));
   } else {
     return NextResponse.json({ Response: responseJSON });
   } 
