@@ -25,17 +25,13 @@ export default function Footer() {
 
   return (
     <div className="absolute bottom-0 w-full p-2 text-sm">
-      <div className="flex flex-row justify-center items-center gap-2">
+      <div className="flex flex-row justify-center items-center gap-0">
         <div className="flex flex-row gap-2 justify-center items-center">
-          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-          <div className="font-bold">{count} Visits</div>
-        </div>
-        <div className="font-bold text-center justify-center items-center">
-          <p className="">
-            Hello stranger from <span className="text-red-500">{location}</span>
-            .
-          </p>
-          
+          <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse items-center justify-center"></div>
+          <div className="font-bold">
+            {count} Visits - Hello stranger from{" "}
+            <span className="text-red-500">{location}</span>
+          </div>
         </div>
       </div>
     </div>
