@@ -26,6 +26,7 @@ export default function PostAnalyzer() {
       Analyze the following data from a user on X
       based on this users posts and reposts, generate a post
       that this user will like.
+      use old posts too not just the most recent.
       just respond with the post. no filler.
 
       posts: ${
