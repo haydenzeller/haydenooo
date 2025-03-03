@@ -30,7 +30,7 @@ export default function Home() {
             <p className="">Chat with an AI</p>
             <p className="opacity-50">*BETA*</p>
           </div>
-          <div className="flex flex-col border rounded-box p-5">
+{/*           <div className="flex flex-col border rounded-box p-5">
             <Link href="/xroast" className="text-red-500 text-2xl underline">
               XRoast
             </Link>
@@ -41,7 +41,7 @@ export default function Home() {
             <p className="opacity-50">
               *This is just for fun and may hurt your feelings*
             </p>
-          </div>
+          </div> */}
         </section>
       </div>
       <Footer />
